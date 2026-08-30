@@ -796,38 +796,82 @@ footer {
     }
 
     #home {
-        padding: 70px 5%;
+        padding: 48px 20px 56px;
+        min-height: auto;
     }
 
     .hero-container {
         flex-direction: column;
-        gap: 40px;
+        gap: 32px;
     }
 
     .hero-content {
+        width: min(100%, 360px);
+        margin-inline: auto;
         text-align: center;
     }
 
-    .profile-orbit {
-        width: clamp(230px, 60vw, 260px);
+    .hero-greeting {
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 8px;
     }
 
     #home h1 {
-        font-size: 48px;
+        font-size: clamp(38px, 11vw, 48px);
+        line-height: 1.1;
+        margin-bottom: 15px;
     }
 
     #home h1 span {
-        font-size: 35px;
+        font-size: clamp(28px, 8vw, 35px);
     }
 
     #home h2 {
-        font-size: 24px;
+        font-size: 20px;
+        line-height: 1.4;
+        max-width: 330px;
+        margin-inline: auto;
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        max-width: 330px;
+        margin-inline: auto;
+        font-size: 16px;
+        line-height: 1.7;
+        text-align: center;
     }
 
     .hero-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        width: 100%;
+        max-width: 360px;
+        margin-inline: auto;
+        margin-top: 24px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero-buttons a {
+        flex: 1 1 0;
+        width: 0;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 12px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .profile-orbit {
+        width: min(76vw, 280px);
+        margin-inline: auto;
+        margin-top: 8px;
     }
 
     .about-content {
@@ -862,15 +906,32 @@ footer {
 
 @media (max-width: 400px) {
     #home h1 {
-        font-size: 38px;
+        font-size: 34px;
     }
 
     #home h1 span {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     #home h2 {
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-greeting {
+        font-size: 16px;
+    }
+
+    .hero-buttons a {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .profile-orbit {
+        width: min(72vw, 240px);
     }
 }
 
