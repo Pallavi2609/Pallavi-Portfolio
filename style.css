@@ -188,8 +188,229 @@ nav a:hover {
     text-align: left;
 }
 
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
 .hero-content {
+    flex: 1;
+    min-width: 0;
     max-width: 750px;
+}
+
+/* Profile orbit container */
+.profile-orbit {
+    position: relative;
+    width: clamp(390px, 30vw, 440px);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Orbit rings */
+.orbit-ring {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 1.5px solid rgba(37, 99, 235, 0.35);
+}
+
+.ring-1 {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: rotate(5deg);
+}
+
+.ring-2 {
+    width: 106%;
+    height: 97%;
+    top: 1.5%;
+    left: -3%;
+    transform: rotate(-12deg);
+    border-color: rgba(37, 99, 235, 0.22);
+}
+
+.ring-3 {
+    width: 97%;
+    height: 107%;
+    top: -3.5%;
+    left: 1.5%;
+    transform: rotate(15deg);
+    border-color: rgba(37, 99, 235, 0.18);
+}
+
+/* Orbit dots */
+.orbit-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: #2563eb;
+    pointer-events: none;
+}
+
+.dot-1 {
+    width: 6px;
+    height: 6px;
+    top: -2%;
+    left: 30%;
+    opacity: 0.7;
+}
+
+.dot-2 {
+    width: 4px;
+    height: 4px;
+    top: 8%;
+    right: -1%;
+    opacity: 0.5;
+}
+
+.dot-3 {
+    width: 8px;
+    height: 8px;
+    top: 45%;
+    right: -4%;
+    opacity: 0.6;
+}
+
+.dot-4 {
+    width: 5px;
+    height: 5px;
+    bottom: 5%;
+    right: 10%;
+    opacity: 0.55;
+}
+
+.dot-5 {
+    width: 12px;
+    height: 12px;
+    bottom: -2%;
+    left: 50%;
+    opacity: 0.4;
+}
+
+.dot-6 {
+    width: 4px;
+    height: 4px;
+    bottom: 12%;
+    left: -2%;
+    opacity: 0.5;
+}
+
+.dot-7 {
+    width: 7px;
+    height: 7px;
+    top: 50%;
+    left: -3%;
+    opacity: 0.45;
+}
+
+.dot-8 {
+    width: 5px;
+    height: 5px;
+    top: 15%;
+    left: -1%;
+    opacity: 0.5;
+}
+
+.dot-9 {
+    width: 10px;
+    height: 10px;
+    top: -3%;
+    right: 25%;
+    opacity: 0.35;
+}
+
+.dot-10 {
+    width: 4px;
+    height: 4px;
+    bottom: 20%;
+    right: -3%;
+    opacity: 0.6;
+}
+
+/* Slow rotation for rings and dots */
+@keyframes orbit-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-orbit .orbit-ring,
+.profile-orbit .orbit-dot {
+    animation: orbit-spin 25s linear infinite;
+}
+
+/* Counter-rotate each ring to keep border positions varied */
+.ring-1 {
+    animation: orbit-spin 25s linear infinite;
+}
+
+.ring-2 {
+    animation: orbit-spin 30s linear infinite reverse;
+}
+
+.ring-3 {
+    animation: orbit-spin 22s linear infinite;
+}
+
+/* Profile photo (inside orbit) */
+.hero-photo {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0;
+    border: 3px solid #2563eb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 0 0 6px rgba(37, 99, 235, 0.08);
+}
+
+/* Blurred background layer using the same photo */
+.hero-photo::before {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    background-image: url("pic.jpeg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px);
+    transform: scale(1.08);
+    z-index: 0;
+}
+
+.hero-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.16), 0 0 0 7px rgba(37, 99, 235, 0.10);
+}
+
+.hero-photo img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain;
+    object-position: center;
 }
 
 .hero-greeting {
@@ -262,7 +483,44 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
 
+.about-text {
+    max-width: 650px;
+}
+
+.about-text h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+.about-card {
+    padding: 30px;
+    min-width: 280px;
+    background: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-card h3 {
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    color: #475569;
+    margin: 12px 0;
+}
 
 .skills-container {
     display: grid;
@@ -522,6 +780,12 @@ footer {
     color: #1d4ed8;
 }
 
+@media (max-width: 1024px) {
+    .profile-orbit {
+        width: clamp(320px, 30vw, 350px);
+    }
+}
+
 @media (max-width: 768px) {
     nav {
         padding: 15px 5%;
@@ -533,6 +797,19 @@ footer {
 
     #home {
         padding: 70px 5%;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .profile-orbit {
+        width: clamp(230px, 60vw, 260px);
     }
 
     #home h1 {
@@ -594,6 +871,14 @@ footer {
 
     #home h2 {
         font-size: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .profile-orbit .orbit-ring,
+    .profile-orbit .orbit-dot {
+        animation: none;
     }
 }
 

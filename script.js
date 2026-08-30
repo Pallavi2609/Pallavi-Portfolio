@@ -1,4 +1,3 @@
-// Mobile Navbar Toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 const mobileOverlay = document.getElementById('mobile-overlay');
@@ -27,13 +26,12 @@ function toggleMenu() {
     }
 }
 
-// Toggle on hamburger click
 hamburger.addEventListener('click', toggleMenu);
 
-// Close on overlay click
+
 mobileOverlay.addEventListener('click', closeMenu);
 
-// Close when a nav link is clicked
+
 const navItems = navLinks.querySelectorAll('a');
 navItems.forEach(function (item) {
     item.addEventListener('click', function () {
@@ -41,7 +39,6 @@ navItems.forEach(function (item) {
     });
 });
 
-// Close on Escape key
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && navLinks.classList.contains('active')) {
         closeMenu();
