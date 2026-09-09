@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pallavi | Portfolio</title>
+
+    <script>
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Pallavi</div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
+            aria-controls="nav-links">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <ul id="nav-links">
+            <li class="drawer-header">
+                <img src="pic.jpeg" alt="Pallavi" class="drawer-profile-pic">
+                <div class="drawer-header-text">
+                    <span class="drawer-name">Pallavi</span>
+                    <span class="drawer-subtitle">CSE Student | Data Scientist</span>
+                </div>
+                <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </li>
+            <li class="drawer-nav-item"><a href="#home">
+                    <svg class="drawer-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span class="drawer-label">Home</span>
+                    <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a></li>
+            <li class="drawer-nav-item"><a href="#about">
+                    <svg class="drawer-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="drawer-label">About</span>
+                    <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a></li>
+            <li class="drawer-nav-item"><a href="#skills">
+                    <svg class="drawer-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <span class="drawer-label">Skills</span>
+                    <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a></li>
+            <li class="drawer-nav-item"><a href="#projects">
+                    <svg class="drawer-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    <span class="drawer-label">Projects</span>
+                    <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a></li>
+            <li class="drawer-nav-item"><a href="#education">
+                    <svg class="drawer-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"></path>
+                    </svg>
+                    <span class="drawer-label">Education</span>
+                    <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a></li>
+            <li class="drawer-nav-item"><a href="#certificates">
+                    <svg class="drawer-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                    <span class="drawer-label">Certificates</span>
+                    <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a></li>
+            <li class="drawer-nav-item"><a href="#contact">
+                    <svg class="drawer-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span class="drawer-label">Contact</span>
+                    <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a></li>
+            <li class="drawer-separator"></li>
+            <li class="drawer-theme-row">
+                <div class="drawer-theme-info">
+                    <svg class="drawer-theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <div>
+                        <span class="drawer-theme-label">Dark Mode</span>
+                        <span class="drawer-theme-sub">Switch theme</span>
+                    </div>
+                </div>
+                <button class="drawer-theme-switch" id="drawerThemeSwitch" aria-label="Switch to dark mode">
+                    <span class="drawer-theme-knob"></span>
+                </button>
+            </li>
+            <li class="drawer-social">
+                <span class="drawer-social-title">LET'S CONNECT</span>
+                <div class="drawer-social-links">
+                    <a href="https://www.linkedin.com/in/pallavi-kumari-01b029263" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/Pallavi2609" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="mailto:pallavikumarishah2002@gmail.com" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </li>
+            <li class="desktop-theme-toggle-item">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+    </nav>
+
+
+    <section id="home">
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <p class="hero-greeting">Hello, I'm</p>
+
+                <h1>Pallavi <span>👋</span></h1>
+
+                <h2>CSE Student & Aspiring Data Scientist</h2>
+
+                <p class="hero-description">
+                    I am passionate about programming, data science,
+                    machine learning and building useful projects.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="hero-btn primary-btn">
+                        View My Projects
+                    </a>
+
+                    <a href="#" id="resumeBtn" class="hero-btn secondary-btn">
+                        View Resume
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="profile-orbit">
+                <div class="hero-photo">
+                    <img src="pic.jpeg" alt="Pallavi - Profile Photo">
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <div class="about-content">
+
+            <div class="about-text">
+
+                <h3>Who I Am</h3>
+
+                <p>
+                    I am a Computer Science Engineering student with a strong
+                    interest in Data Science, Machine Learning and software
+                    development.
+                </p>
+
+                <p>
+                    I enjoy learning new technologies, solving programming
+                    problems and building projects that can solve real-world
+                    problems.
+                </p>
+
+                <p>
+                    Currently, I am developing my skills in Python, SQL,
+                    Machine Learning, Data Structures and Web Development.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>My Focus</h3>
+
+                <p><strong>🎓 Degree:</strong> B.Tech CSE</p>
+
+                <p><strong>💻 Interest:</strong> Data Science</p>
+
+                <p><strong>🤖 Learning:</strong> Machine Learning</p>
+
+                <p><strong>📍 Goal:</strong> Data Scientist</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="skills">
+
+        <h2>My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>C++</p>
+                <p>C</p>
+                <p>Java</p>
+                <p>Python</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Data Science</h3>
+                <p>NumPy</p>
+                <p>Pandas</p>
+                <p>Matplotlib</p>
+                <p>Seaborn</p>
+                <p>Machine Learning</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Database</h3>
+                <p>SQL</p>
+                <p>PostgreSQL</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="projects">
+
+        <h2>My Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+
+                <h3>Employee Data Analysis</h3>
+
+                <p>
+                    Analyzing employee data using Python, Pandas and
+                    Matplotlib to find useful patterns and insights.
+                </p>
+
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>Matplotlib</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Live Demo</a>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Machine Learning Project</h3>
+
+                <p>
+                    A machine learning project that uses data to make
+                    predictions and understand relationships between variables.
+                </p>
+
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>NumPy</span>
+                    <span>Scikit-learn</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Live Demo</a>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    A responsive personal portfolio website showcasing
+                    my skills, projects, education and achievements.
+                </p>
+
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Live Demo</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="education">
+
+        <h2>Education</h2>
+
+        <div class="education-container">
+
+            <div class="education-card">
+
+                <h3>Bachelor of Technology - CSE</h3>
+
+                <h4>Bakhtiyarpur College of Engineering</h4>
+
+                <p>2024 - 2027</p>
+
+                <p>
+                    Currently pursuing B.Tech in Computer Science and Engineering.
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>Diploma in Computer Science Engineering</h3>
+
+                <h4>Government Polytechnic Bhagalpur</h4>
+
+                <p>Completed in 2024</p>
+
+                <p>
+                    Completed Diploma in Computer Science Engineering
+                    with CGPA 8.51.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="certificates">
+
+        <h2>Certificates & Achievements</h2>
+
+        <div class="certificates-container">
+
+            <div class="certificate-card">
+                <h3>Certificate Name</h3>
+                <p>Issuing Organization</p>
+                <a href="#" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="certificate-card">
+                <h3>Certificate Name</h3>
+                <p>Issuing Organization</p>
+                <a href="#" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="certificate-card">
+                <h3>Achievement</h3>
+                <p>Competition / Organization</p>
+                <a href="#" target="_blank">View</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="contact">
+
+        <h2>Let's Connect</h2>
+
+        <p class="contact-intro">
+            I'm always interested in learning, building projects
+            and connecting with new people.
+        </p>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Get in Touch</h3>
+
+                <p>
+                    If you have a project idea, opportunity or
+                    just want to say hello, feel free to contact me.
+                </p>
+
+                <p>
+                    📧 Email:
+                    <a href="mailto:pallavikumarishah2002@gmail.com">
+                        pallavikumarishah2002@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    💼 LinkedIn:
+                    <a href="https://www.linkedin.com/in/pallavi-kumari-01b029263" target="_blank">
+                        LinkedIn Profile
+                    </a>
+                </p>
+
+                <p>
+                    💻 GitHub:
+                    <a href="https://github.com/Pallavi2609" target="_blank">
+                        GitHub Profile
+                    </a>
+                </p>
+
+            </div>
+
+            <form class="contact-form" action="https://formspree.io/f/mgawgjjk" method="POST">
+
+                <input type="text" name="name" placeholder="Your Name" required>
+
+                <input type="email" name="email" placeholder="Your Email" required>
+
+                <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>© 2026 Pallavi. All Rights Reserved.</p>
+
+        <div class="footer-links">
+            <a href="https://github.com/Pallavi2609" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/pallavi-kumari-01b029263" target="_blank">LinkedIn</a>
+            <a href="mailto:pallavikumarishah2002@gmail.com">Email</a>
+        </div>
+
+    </footer>
+
+    <div class="resume-modal" id="resumeModal">
+        <div class="resume-modal-overlay" id="resumeModalOverlay"></div>
+        <div class="resume-modal-content">
+            <button class="resume-modal-close" id="resumeModalClose">&times;</button>
+            <div class="resume-toolbar">
+                <a href="https://drive.google.com/uc?export=download&id=1vQ_4N6QI66PTosCm8ZIvWK4FzfLFhZgC"
+                    class="resume-toolbar-btn" id="resumeDownloadBtn" target="_blank" rel="noopener noreferrer">Download
+                    Resume</a>
+                <a href="https://drive.google.com/file/d/1vQ_4N6QI66PTosCm8ZIvWK4FzfLFhZgC/view"
+                    class="resume-toolbar-btn" id="resumeOpenTabBtn" target="_blank" rel="noopener noreferrer">Open in
+                    New Tab</a>
+            </div>
+            <div class="resume-iframe-wrapper">
+                <iframe src="https://drive.google.com/file/d/1vQ_4N6QI66PTosCm8ZIvWK4FzfLFhZgC/preview"
+                    class="resume-iframe" allow="autoplay" title="Resume Preview"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
