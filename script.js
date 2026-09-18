@@ -176,3 +176,46 @@ document.addEventListener('keydown', function (e) {
         closeResumeModal();
     }
 });
+
+/* ---- Certificate Viewer Modal ---- */
+var certModal = document.getElementById('certModal');
+var certModalClose = document.getElementById('certModalClose');
+var certModalOverlay = document.getElementById('certModalOverlay');
+var certIframe = document.getElementById('certIframe');
+var certOpenTab = document.getElementById('certOpenTab');
+var certDownload = document.getElementById('certDownload');
+var certViewBtns = document.querySelectorAll('.cert-view-btn');
+
+function openCertModal(certFile) {
+    var encodedFile = encodeURI(certFile);
+    certIframe.src = encodedFile;
+    certOpenTab.href = encodedFile;
+    certDownload.href = encodedFile;
+    certDownload.setAttribute('download', certFile);
+    certModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCertModal() {
+    certModal.classList.remove('active');
+    certIframe.src = '';
+    document.body.style.overflow = '';
+}
+
+certViewBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        var certFile = this.getAttribute('data-cert');
+        if (certFile) {
+            openCertModal(certFile);
+        }
+    });
+});
+
+certModalClose.addEventListener('click', closeCertModal);
+certModalOverlay.addEventListener('click', closeCertModal);
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && certModal.classList.contains('active')) {
+        closeCertModal();
+    }
+});

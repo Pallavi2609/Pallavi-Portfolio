@@ -447,33 +447,39 @@
         <div class="education-container">
 
             <div class="education-card">
+                <div class="education-card-inner">
+                    <img src="bakhtiyarpurpic.jpg" alt="Bakhtiyarpur College of Engineering" class="education-card-img">
+                    <div class="education-card-details">
+                        <h3>Bachelor of Technology - CSE</h3>
 
-                <h3>Bachelor of Technology - CSE</h3>
+                        <h4>Bakhtiyarpur College of Engineering</h4>
 
-                <h4>Bakhtiyarpur College of Engineering</h4>
+                        <p>2024 - 2027</p>
 
-                <p>2024 - 2027</p>
-
-                <p>
-                    Currently pursuing B.Tech in Computer Science and Engineering.
-                </p>
-
+                        <p>
+                            Currently pursuing B.Tech in Computer Science and Engineering.
+                        </p>
+                    </div>
+                </div>
             </div>
 
 
             <div class="education-card">
+                <div class="education-card-inner">
+                    <img src="bhagalpurpic.avif" alt="Government Polytechnic Bhagalpur" class="education-card-img">
+                    <div class="education-card-details">
+                        <h3>Diploma in Computer Science Engineering</h3>
 
-                <h3>Diploma in Computer Science Engineering</h3>
+                        <h4>Government Polytechnic Bhagalpur</h4>
 
-                <h4>Government Polytechnic Bhagalpur</h4>
+                        <p>Completed in 2024</p>
 
-                <p>Completed in 2024</p>
-
-                <p>
-                    Completed Diploma in Computer Science Engineering
-                    with CGPA 8.51.
-                </p>
-
+                        <p>
+                            Completed Diploma in Computer Science Engineering
+                            with CGPA 8.51.
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -487,26 +493,62 @@
         <div class="certificates-container">
 
             <div class="certificate-card">
-                <h3>Certificate Name</h3>
-                <p>Issuing Organization</p>
-                <a href="#" target="_blank">View Certificate</a>
+                <svg class="certificate-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+                <h3>Internship Certificate</h3>
+                <p class="cert-org">Internship Program</p>
+                <p class="cert-desc">Successfully completed professional internship program.</p>
+                <button class="cert-view-btn" data-cert="Intership_Certificate.pdf">View Certificate</button>
             </div>
 
             <div class="certificate-card">
-                <h3>Certificate Name</h3>
-                <p>Issuing Organization</p>
-                <a href="#" target="_blank">View Certificate</a>
+                <svg class="certificate-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+                <h3>NISM Certification</h3>
+                <p class="cert-org">National Institute of Securities Markets</p>
+                <p class="cert-desc">Certified by NISM in securities and financial markets.</p>
+                <button class="cert-view-btn" data-cert="NISM.pdf">View Certificate</button>
             </div>
 
             <div class="certificate-card">
-                <h3>Achievement</h3>
-                <p>Competition / Organization</p>
-                <a href="#" target="_blank">View</a>
+                <svg class="certificate-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+                <h3>TCS iON Certification</h3>
+                <p class="cert-org">TCS iON</p>
+                <p class="cert-desc">Professional certification from TCS iON digital learning platform.</p>
+                <button class="cert-view-btn" data-cert="TCS iON.pdf">View Certificate</button>
             </div>
 
         </div>
 
     </section>
+
+    <div class="cert-modal" id="certModal">
+        <div class="cert-modal-overlay" id="certModalOverlay"></div>
+        <div class="cert-modal-content">
+            <button class="cert-modal-close" id="certModalClose" aria-label="Close certificate viewer">&times;</button>
+            <div class="cert-modal-toolbar">
+                <a href="#" class="cert-modal-btn" id="certOpenTab" target="_blank" rel="noopener noreferrer">Open in
+                    New Tab</a>
+                <a href="#" class="cert-modal-btn" id="certDownload" download>Download</a>
+            </div>
+            <div class="cert-modal-viewer">
+                <iframe src="" class="cert-modal-iframe" id="certIframe" title="Certificate Preview"></iframe>
+            </div>
+        </div>
+    </div>
 
     <section id="contact">
 
