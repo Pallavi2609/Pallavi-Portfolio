@@ -689,12 +689,14 @@ nav a:hover {
 }
 
 .project-card {
-    padding: 30px;
+    padding: 20px;
     background: #ffffff;
     border-radius: 15px;
     border: 1px solid #dbeafe;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -702,17 +704,28 @@ nav a:hover {
     border-color: #93c5fd;
 }
 
+.project-preview-img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background: #f1f5f9;
+}
+
 .project-card h3 {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .project-card p {
     color: #475569;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .project-tech {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .project-tech span {
@@ -728,6 +741,7 @@ nav a:hover {
 .project-links {
     display: flex;
     gap: 15px;
+    margin-top: auto;
 }
 
 .project-links a {
