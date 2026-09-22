@@ -621,11 +621,6 @@ nav a:hover {
     max-width: 650px;
 }
 
-.about-text h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
 .about-text p {
     color: #475569;
     margin-bottom: 15px;
@@ -1260,12 +1255,6 @@ footer {
     max-width: 650px;
 }
 
-.about-text h3 {
-    font-size: 30px;
-    color: #0f172a;
-    margin-bottom: 20px;
-}
-
 .about-text p {
     color: #475569;
     font-size: 17px;
@@ -1371,7 +1360,6 @@ footer {
     color: #F8FAFC;
 }
 
-[data-theme="dark"] .about-text h3,
 [data-theme="dark"] .about-card h3,
 [data-theme="dark"] .skill-card h3,
 [data-theme="dark"] .project-card h3,
@@ -1409,10 +1397,6 @@ footer {
 }
 
 [data-theme="dark"] #about>h2 {
-    color: #F8FAFC;
-}
-
-[data-theme="dark"] .about-text h3 {
     color: #F8FAFC;
 }
 
